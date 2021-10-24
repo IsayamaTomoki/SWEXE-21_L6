@@ -1,0 +1,10 @@
+<%= form_with model: @cart_item, url: cart_items_path do |f| %>
+  <p>商品名:<%= @product.name %></p>
+  <p>価格:<%= @product.price %></p>
+  <p>
+  <%= f.hidden_field :product_id, :value => @product.id %>
+  </p>
+  <%= f.label :qty, '数量' %>
+  <%= f.text_field :qty %>
+  <p><%= f.submit 'カートに入れる' %></p>
+<% end %>

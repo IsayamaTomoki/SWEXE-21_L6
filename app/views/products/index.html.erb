@@ -1,0 +1,10 @@
+<% @products.each do |pd| %>
+  <p>
+    <%= pd.name %>
+    <%= link_to '削除', "/products/#{pd.id}", method: :delete %>
+    <%= link_to 'カートに入れる', new_cart_item_path(id: pd.id) %>
+  </p>
+<% end %>
+
+<%= link_to '新規商品の登録', "/products/new" %>
+<%= link_to 'カートの中を見る', "/carts/show" %>
